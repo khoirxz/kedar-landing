@@ -1,0 +1,45 @@
+.section1 {
+  margin-top: 4rem;
+
+  .row {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+
+    .card-img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
+#section2 {
+  margin-top: 7rem;
+  background-color: #f4ecfc;
+  padding: 5rem 0;
+
+  .section2 {
+    margin-top: 4rem;
+
+    .row {
+      width: 60%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+
+      .card {
+        background-color: #ffffff;
+        border-radius: 25px;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 200px;
+      }
+    }
+  }
+}

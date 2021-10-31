@@ -1,8 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+// display
+$base: 1100px;
+$tablet: 800px;
+$mobile: 500px;
+
+*,
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 10px 0;
+  line-height: 57px;
+  letter-spacing: 0.01em;
+  font-weight: bold;
+}
+
+p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
 }
