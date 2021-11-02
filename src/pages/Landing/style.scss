@@ -43,3 +43,40 @@
     }
   }
 }
+
+#section3 {
+  margin-top: 8rem;
+  .content {
+    width: 73%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+    .imgIllustration {
+      width: 360px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+#section4 {
+  margin-top: 8rem;
+  color: #ffffff;
+  .content {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+
+    .big-card {
+      padding: 3rem;
+      background-image: url("../../assets/svg/blob-bg.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 25px;
+    }
+  }
+}

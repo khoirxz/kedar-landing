@@ -1,3 +1,5 @@
+import { Button } from "../../Atoms";
+
 import "./style.scss";
 
 const Navbar = () => {
@@ -15,7 +17,7 @@ const Navbar = () => {
         <ul className="navbar-item">
           <li>Masuk</li>
           <li>
-            <button>daftar</button>
+            <Button title="daftar" />
           </li>
         </ul>
       </div>
