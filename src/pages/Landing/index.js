@@ -6,6 +6,8 @@ import {
   Footer,
 } from "../../components/Molecules";
 
+import { Button } from "../../components/Atoms";
+
 import smile from "../../assets/svg/icon/smile.svg";
 import phone from "../../assets/svg/icon/phone.svg";
 import money from "../../assets/svg/icon/money.svg";
@@ -138,7 +140,7 @@ const Landing = () => {
           <div className="content">
             <div className="big-card">
               <h1>AYO BURUAN GABUNG</h1>
-              <button>DAFTAR</button>
+              <Button title="DAFTAR" />
             </div>
           </div>
         </Section>

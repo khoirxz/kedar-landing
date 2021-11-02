@@ -1,4 +1,5 @@
 import { Button } from "../../Atoms";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 import "./style.scss";
 
@@ -18,6 +19,12 @@ const Navbar = () => {
           <li>Masuk</li>
           <li>
             <Button title="daftar" />
+          </li>
+        </ul>
+
+        <ul className="navbar-responsif">
+          <li>
+            <HiMenuAlt3 size={32} />
           </li>
         </ul>
       </div>
