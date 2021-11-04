@@ -1,12 +1,11 @@
-import {
-  Card,
-  Hero,
-  Navbar,
-  Section,
-  Footer,
-} from "../../components/Molecules";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
 
-import { Button } from "../../components/Atoms";
+import { Hero, Navbar, Section, Footer } from "../../components/Molecules";
 
 import smile from "../../assets/svg/icon/smile.svg";
 import phone from "../../assets/svg/icon/phone.svg";
@@ -14,137 +13,292 @@ import money from "../../assets/svg/icon/money.svg";
 import bookpecil from "../../assets/img/bookpecil.png";
 import "./style.scss";
 
+const dataList = [
+  {
+    id: 1,
+    title: "Mudah",
+    image: smile,
+    subtitle:
+      "semua orang bisa menjalankan kedar hanya beberapa langkah kamu siap memulai pelajaran.",
+  },
+  {
+    id: 2,
+    title: "Flexsibel",
+    image: phone,
+    subtitle:
+      "aksen dimana saja dan kapan saja kedar memberikan kemudaan mengakses kapanpun kamu mau.",
+  },
+  {
+    id: 3,
+    title: "Gratis",
+    image: money,
+    subtitle:
+      "Kami tahu yang ada harapkan kedar adalah kebebasan. kalian bebas askses apa saja dikedar.",
+  },
+];
+
+const dataItem = [
+  {
+    id: 1,
+    title: "GURU",
+    subtitle:
+      "hanya beberapa langkah kamu bisa membuat kelasmu sendiri dan langsung bisa memposting materikamu.",
+  },
+  {
+    id: 2,
+    title: "SISWA",
+    subtitle:
+      "daftar dan mulailah perjalananmu ambil kelas apa yang kamu suka.",
+  },
+];
+
 const Landing = () => {
   return (
     <>
-      <div className="landing">
+      <Box component="div" className="landing">
         <Navbar />
         <Hero />
 
-        <Section id="section1">
-          <div className="section-heading">
-            <h1>KENAPA KAMI ?</h1>
-            <p>
+        <Section>
+          <Box
+            sx={{
+              textAlign: "center",
+              width: "60%",
+              margin: "auto",
+            }}
+          >
+            <Typography
+              component="h1"
+              sx={{
+                fontSize: "36px",
+                fontWeight: 700,
+                lineHeight: "57px",
+              }}
+            >
+              KENAPA KAMI ?
+            </Typography>
+            <Typography
+              component="p"
+              sx={{
+                fontSize: "16px",
+                fontWeight: 400,
+                mt: 1,
+              }}
+            >
               Kedar memberikan kemudahan dalam proses pembelajaran. kami telah
               menyesuaikan aplikasi ini dengan pendidikan lokal agar membantu
               kegianatan ajar mengajar
-            </p>
-          </div>
+            </Typography>
+          </Box>
 
-          <div className="section1">
-            <div className="row">
-              <div className="col">
-                <Card>
-                  <img src={smile} alt="smile-icon" className="card-img" />
-                  <div className="card-title">
-                    <h1>Mudah</h1>
-                  </div>
-                  <div className="card-body">
-                    <p>
-                      semua orang bisa menjalankan kedar hanya beberapa langkah
-                      kamu siap memulai pelajaran
-                    </p>
-                  </div>
-                </Card>
-              </div>
-              <div className="col">
-                <Card>
-                  <img src={phone} alt="smile-icon" className="card-img" />
-                  <div className="card-title">
-                    <h1>Flexsibel</h1>
-                  </div>
-                  <div className="card-body">
-                    <p>
-                      aksen dimana saja dan kapan saja kedar memberikan kemudaan
-                      mengakses kapanpun kamu mau
-                    </p>
-                  </div>
-                </Card>
-              </div>
-              <div className="col">
-                <Card>
-                  <img src={money} alt="smile-icon" className="card-img" />
-                  <div className="card-title">
-                    <h1>Gratis</h1>
-                  </div>
-                  <div className="card-body">
-                    <p>
-                      Kami tahu yang ada harapkan kedar adalah kebebasan. kalian
-                      bebas askses apa saja dikedar
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
+          <Box className="section1">
+            <Grid
+              container
+              spacing={4}
+              sx={{
+                margin: "auto",
+              }}
+            >
+              {dataList.map((item) => (
+                <Grid sx={{ mt: 2 }} item xs={12} md={4} lg={4} key={item.id}>
+                  <Card sx={{ boxShadow: 0, maxWidth: 300 }}>
+                    <CardContent>
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt="smile-icon"
+                        sx={{
+                          width: 64,
+                          height: 64,
+                        }}
+                      />
+
+                      <Typography
+                        component="h1"
+                        sx={{
+                          fontSize: 36,
+                          lineHeight: "57px",
+                          fontWeight: 700,
+                          marginY: 1,
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+
+                      <Typography
+                        component="p"
+                        sx={{
+                          fontSize: 15,
+                          lineHeight: "24px",
+                          fontWeight: 300,
+                        }}
+                      >
+                        {item.subtitle}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Section>
 
-        <Section id="section2">
-          <div className="section-heading">
-            <h1>BUAT KELAS ATAU GABUNG KELAS</h1>
-            <p>
+        <Section
+          sx={{
+            mt: 7,
+            py: "7rem",
+            backgroundColor: "#f4ecfc",
+          }}
+        >
+          <Box
+            sx={{
+              textAlign: "center",
+              width: "60%",
+              margin: "auto",
+            }}
+          >
+            <Typography
+              component="h1"
+              sx={{
+                fontSize: "36px",
+                fontWeight: 700,
+                lineHeight: "57px",
+              }}
+            >
+              BUAT KELAS ATAU GABUNG KELAS
+            </Typography>
+            <Typography
+              component="p"
+              sx={{
+                fontSize: "16px",
+                fontWeight: 400,
+                mt: 1,
+              }}
+            >
               kamu bebas memulai dari mana saja bagi pengetahuanmu atau cari dan
               pelajari apa yang kamu mau
-            </p>
-          </div>
+            </Typography>
+          </Box>
 
-          <div className="section2">
-            <div className="row">
-              <div className="col">
-                <Card>
-                  <div className="card-title">
-                    <h1>GURU</h1>
-                  </div>
-                  <div className="card-body">
-                    <p>
-                      hanya beberapa langkah kamu bisa membuat kelasmu sendiri
-                      dan langsung bisa memposting materikamu
-                    </p>
-                  </div>
-                </Card>
-              </div>
-              <div className="col">
-                <Card>
-                  <div className="card-title">
-                    <h1>SISWA</h1>
-                  </div>
-                  <div className="card-body">
-                    <p>
-                      daftar dan mulailah perjalananmu ambil kelas apa yang kamu
-                      suka
-                    </p>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
+          <Box>
+            <Grid
+              container
+              spacing={5}
+              sx={{
+                width: "60%",
+                margin: "auto",
+                my: 2,
+              }}
+            >
+              {dataItem.map((item) => (
+                <Grid item xs={12} md={6} key={item.id}>
+                  <Card sx={{ borderRadius: 5, height: "210px" }}>
+                    <CardContent>
+                      <Typography
+                        component="h1"
+                        sx={{
+                          fontSize: 28,
+                          lineHeight: "57px",
+                          fontWeight: 700,
+                          marginY: 1,
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        component="p"
+                        sx={{
+                          fontSize: 15,
+                          lineHeight: "24px",
+                          fontWeight: 300,
+                        }}
+                      >
+                        {item.subtitle}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Section>
 
-        <Section id="section3">
-          <div className="content">
-            <div>
-              <h1>AYO JELAJAHI DUNIA BERSAMA KEDAR</h1>
-              <p>gabung dan belajar bersama-sama dan tentunya menyenangkan</p>
-            </div>
-            <div>
-              <img
-                className="imgIllustration"
+        <Section>
+          <Grid
+            container
+            spacing={3}
+            sx={{ mt: 8, width: "73%", margin: "auto", py: 4 }}
+          >
+            <Grid item xs={12} md={6}>
+              <Typography
+                component="h1"
+                sx={{
+                  fontSize: 40,
+                  lineHeight: "57px",
+                  fontWeight: 700,
+                  mb: 2,
+                }}
+              >
+                AYO JELAJAHI DUNIA BERSAMA KEDAR
+              </Typography>
+              <Typography component="p">
+                gabung dan belajar bersama-sama dan tentunya menyenangkan
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                component="img"
+                sx={{
+                  display: "block",
+                  width: "360px",
+                  marginX: "auto",
+                }}
                 src={bookpecil}
                 alt="book and pencil"
               />
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         </Section>
 
-        <Section id="section4">
-          <div className="content">
-            <div className="big-card">
-              <h1>AYO BURUAN GABUNG</h1>
-              <Button title="DAFTAR" />
-            </div>
-          </div>
+        <Section>
+          <Box
+            sx={{
+              width: "65%",
+              margin: "auto",
+              textAlign: "center",
+            }}
+          >
+            <Card id="big-card">
+              <CardContent>
+                <Typography
+                  component="h1"
+                  sx={{
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: 30,
+                    mb: 3,
+                  }}
+                >
+                  AYO BURUAN GABUNG
+                </Typography>
+                <Button
+                  sx={{
+                    backgroundColor: "white",
+                    color: "#0E0712",
+                    borderRadius: "10px",
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    ":active": { backgroundColor: "white" },
+                    ":hover": { backgroundColor: "white" },
+                  }}
+                >
+                  DAFTAR
+                </Button>
+              </CardContent>
+            </Card>
+          </Box>
         </Section>
-      </div>
+      </Box>
       <Footer />
     </>
   );
