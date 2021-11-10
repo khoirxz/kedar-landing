@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -5,7 +6,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 
-import { Hero, Navbar, Section, Footer } from "../../components/Molecules";
+import {
+  Hero,
+  Navbar,
+  Section,
+  Footer,
+  Sidenav,
+} from "../../components/Molecules";
 
 import smile from "../../assets/svg/icon/smile.svg";
 import phone from "../../assets/svg/icon/phone.svg";
@@ -53,11 +60,18 @@ const dataItem = [
 ];
 
 const Landing = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
       <Box component="div" className="landing">
-        <Navbar />
+        <Navbar open={open} handleBtn={handleOpen} />
         <Hero />
+        <Sidenav open={open} handleBtn={handleOpen} />
 
         <Section>
           <Box
@@ -91,17 +105,18 @@ const Landing = () => {
             </Typography>
           </Box>
 
-          <Box className="section1">
+          <Box>
             <Grid
               container
               spacing={4}
               sx={{
                 margin: "auto",
+                width: { xs: "80%", md: "100%", lg: "100%" },
               }}
             >
               {dataList.map((item) => (
                 <Grid sx={{ mt: 2 }} item xs={12} md={4} lg={4} key={item.id}>
-                  <Card sx={{ boxShadow: 0, maxWidth: 300 }}>
+                  <Card sx={{ boxShadow: 0, maxWidth: 300, margin: "auto" }}>
                     <CardContent>
                       <Box
                         component="img"
@@ -110,6 +125,8 @@ const Landing = () => {
                         sx={{
                           width: 64,
                           height: 64,
+                          display: "block",
+                          marginX: { xs: "auto", lg: "0" },
                         }}
                       />
 
@@ -120,6 +137,7 @@ const Landing = () => {
                           lineHeight: "57px",
                           fontWeight: 700,
                           marginY: 1,
+                          textAlign: { xs: "center", lg: "left" },
                         }}
                       >
                         {item.title}

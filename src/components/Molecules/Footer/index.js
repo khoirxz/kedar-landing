@@ -1,10 +1,27 @@
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 import "./style.scss";
 
 const Footer = () => {
   return (
-    <footer>
-      <p>Kedar &copy; 2021</p>
-    </footer>
+    <Box
+      component="footer"
+      sx={{
+        bgcolor: "#0e0712",
+        padding: "2rem",
+        textAlign: "center",
+      }}
+    >
+      <Typography
+        component="p"
+        sx={{
+          color: "white",
+        }}
+      >
+        Kedar &copy; 2021
+      </Typography>
+    </Box>
   );
 };
 

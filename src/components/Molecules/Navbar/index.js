@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+
 const menuItem = ["Home", "Layanan", "Tentang"];
 
-const Navbar = () => {
+const Navbar = ({ handleBtn }) => {
   return (
     <Box
       component="nav"
@@ -42,7 +44,7 @@ const Navbar = () => {
             listStyle: "none",
             margin: 0,
             padding: 0,
-            display: "flex",
+            display: { xs: "none", md: "none", lg: "flex" },
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -60,13 +62,14 @@ const Navbar = () => {
             </Box>
           ))}
         </Box>
+
         <Box
           component="ul"
           sx={{
             listStyle: "none",
             margin: 0,
             padding: 0,
-            display: "flex",
+            display: { xs: "none", md: "none", lg: "flex" },
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -94,6 +97,23 @@ const Navbar = () => {
             >
               Daftar
             </Button>
+          </Box>
+        </Box>
+
+        <Box
+          component="ul"
+          sx={{
+            listStyle: "none",
+            margin: 0,
+            padding: 0,
+            display: { xs: "flex", md: "flex", lg: "none" },
+            justifyContent: "space-between",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <Box component="li">
+            <HiOutlineMenuAlt3 size={32} onClick={handleBtn} />
           </Box>
         </Box>
       </AppBar>
