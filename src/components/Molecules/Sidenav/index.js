@@ -6,7 +6,10 @@ const Sidenav = ({ open, close, handleBtn }) => {
   return (
     <Drawer anchor="top" open={open} onClose={handleBtn}>
       <Box sx={{ padding: 3 }}>
-        <Box component="ul" sx={{ display: "flex", margin: 0, padding: 0 }}>
+        <Box
+          component="ul"
+          sx={{ display: "flex", margin: 0, padding: 0, alignItems: "center" }}
+        >
           {["Home", "Tentang", "Layanan"].map((text, i) => (
             <Box
               key={i}

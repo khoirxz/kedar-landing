@@ -12,7 +12,7 @@ const Hero = () => {
           <Typography
             component="h1"
             sx={{
-              fontSize: "50px",
+              fontSize: { xs: "30px", lg: "50px" },
               margin: "5px 0",
               fontWeight: "bold",
             }}
@@ -22,7 +22,7 @@ const Hero = () => {
           <Typography
             component="h2"
             sx={{
-              fontSize: "19px",
+              fontSize: { xs: "14px", lg: "19px" },
               margin: "5px 0",
               fontWeight: "normal",
               letterSpacing: "1.7px",
@@ -34,7 +34,7 @@ const Hero = () => {
             variant="contained"
             sx={{
               marginTop: "3rem",
-              fontSize: "24px",
+              fontSize: { xs: "18", lg: "24px" },
               fontWeight: "bold",
               backgroundColor: "white",
               color: "#6F00FF",

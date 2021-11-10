@@ -77,14 +77,14 @@ const Landing = () => {
           <Box
             sx={{
               textAlign: "center",
-              width: "60%",
+              width: { xs: "80%", lg: "60%" },
               margin: "auto",
             }}
           >
             <Typography
               component="h1"
               sx={{
-                fontSize: "36px",
+                fontSize: { xs: "28px", lg: "36px" },
                 fontWeight: 700,
                 lineHeight: "57px",
               }}
@@ -94,7 +94,7 @@ const Landing = () => {
             <Typography
               component="p"
               sx={{
-                fontSize: "16px",
+                fontSize: { xs: "14px", lg: "16px" },
                 fontWeight: 400,
                 mt: 1,
               }}
@@ -108,7 +108,7 @@ const Landing = () => {
           <Box>
             <Grid
               container
-              spacing={4}
+              spacing={{ xs: 0, lg: 4 }}
               sx={{
                 margin: "auto",
                 width: { xs: "80%", md: "100%", lg: "100%" },
@@ -133,7 +133,7 @@ const Landing = () => {
                       <Typography
                         component="h1"
                         sx={{
-                          fontSize: 36,
+                          fontSize: { xs: "28px", lg: "36px" },
                           lineHeight: "57px",
                           fontWeight: 700,
                           marginY: 1,
@@ -146,7 +146,8 @@ const Landing = () => {
                       <Typography
                         component="p"
                         sx={{
-                          fontSize: 15,
+                          textAlign: "center",
+                          fontSize: { xs: "14px", lg: "16px" },
                           lineHeight: "24px",
                           fontWeight: 300,
                         }}
@@ -171,14 +172,14 @@ const Landing = () => {
           <Box
             sx={{
               textAlign: "center",
-              width: "60%",
+              width: { xs: "80%", lg: "60%" },
               margin: "auto",
             }}
           >
             <Typography
               component="h1"
               sx={{
-                fontSize: "36px",
+                fontSize: { xs: "28px", lg: "36px" },
                 fontWeight: 700,
                 lineHeight: "57px",
               }}
@@ -188,7 +189,7 @@ const Landing = () => {
             <Typography
               component="p"
               sx={{
-                fontSize: "16px",
+                fontSize: { xs: "14px", lg: "16px" },
                 fontWeight: 400,
                 mt: 1,
               }}
@@ -201,16 +202,22 @@ const Landing = () => {
           <Box>
             <Grid
               container
-              spacing={5}
+              rowGap={3}
               sx={{
                 width: "60%",
                 margin: "auto",
-                my: 2,
+                my: 5,
               }}
             >
               {dataItem.map((item) => (
                 <Grid item xs={12} md={6} key={item.id}>
-                  <Card sx={{ borderRadius: 5, height: "210px" }}>
+                  <Card
+                    sx={{
+                      borderRadius: 5,
+                      height: { xs: "100%", md: "210px" },
+                      margin: 2,
+                    }}
+                  >
                     <CardContent>
                       <Typography
                         component="h1"
@@ -244,15 +251,19 @@ const Landing = () => {
         <Section>
           <Grid
             container
-            spacing={3}
-            sx={{ mt: 8, width: "73%", margin: "auto", py: 4 }}
+            sx={{
+              mt: 8,
+              width: "76%",
+              margin: "auto",
+              py: 4,
+            }}
           >
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{ p: 2 }}>
               <Typography
                 component="h1"
                 sx={{
-                  fontSize: 40,
-                  lineHeight: "57px",
+                  fontSize: { xs: "28px", lg: "36px" },
+                  lineHeight: { xs: "39px", lg: "57px" },
                   fontWeight: 700,
                   mb: 2,
                 }}
@@ -263,12 +274,12 @@ const Landing = () => {
                 gabung dan belajar bersama-sama dan tentunya menyenangkan
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{ p: 2 }}>
               <Box
                 component="img"
                 sx={{
                   display: "block",
-                  width: "360px",
+                  width: { xs: "100%", lg: "360px" },
                   marginX: "auto",
                 }}
                 src={bookpecil}
@@ -281,7 +292,7 @@ const Landing = () => {
         <Section>
           <Box
             sx={{
-              width: "65%",
+              width: { xs: "80%", lg: "65%" },
               margin: "auto",
               textAlign: "center",
             }}
@@ -293,7 +304,7 @@ const Landing = () => {
                   sx={{
                     color: "#fff",
                     fontWeight: "bold",
-                    fontSize: 30,
+                    fontSize: { xs: 24, lg: 30 },
                     mb: 3,
                   }}
                 >
@@ -304,7 +315,7 @@ const Landing = () => {
                     backgroundColor: "white",
                     color: "#0E0712",
                     borderRadius: "10px",
-                    fontSize: 20,
+                    fontSize: { xs: 18, lg: 20 },
                     fontWeight: "bold",
                     ":active": { backgroundColor: "white" },
                     ":hover": { backgroundColor: "white" },

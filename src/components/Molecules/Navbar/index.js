@@ -31,7 +31,7 @@ const Navbar = ({ handleBtn }) => {
             color: "#fff",
             fontFamily: "Poppins",
             fontWeight: 800,
-            fontSize: "45px",
+            fontSize: { xs: "28px", lg: "45px" },
             letterSpacing: "1.8px",
             cursor: "pointer",
           }}
